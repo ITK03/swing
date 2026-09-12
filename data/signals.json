@@ -1,0 +1,2541 @@
+{
+ "version": 1,
+ "generated_at": "2026-09-12T09:56:18+09:00",
+ "data_date": "2026-09-11",
+ "trade_date": "2026-09-14",
+ "status": "ok",
+ "status_reason": "",
+ "universe_count": 128,
+ "strategies": [
+  {
+   "id": "rsi2_dip",
+   "display_name": "RSI(2)押し目買い（指値+2%利確）",
+   "description": "長期上昇トレンド中（終値>SMA200）の短期売られすぎ（RSI(2)<15）を、翌日前日終値−1%の指値で買い、+2%利確を狙う",
+   "oos_stats": {
+    "win_rate": 0.66,
+    "profit_factor": 1.21,
+    "max_dd": -0.271,
+    "period": "2022-01〜2026-07",
+    "trades": 1023
+   },
+   "validated_at": "2026-07-17",
+   "rule_note": "シグナル翌営業日に前日終値−1%で指値買い（当日限り・未約定なら見送り） / 終値が建値+2%以上→翌寄りで利確売り / 未達ならRSI(2)>70で翌寄り売り / 災害ストップ-15% / 最大10営業日 / 等金額・最大5銘柄",
+   "limit_entry": 0.01,
+   "risks": [
+    "検証OOS期間(2022〜2026)は日本株の強い上昇相場で、成績に追い風が含まれる。2018年型のじり安相場では勝率を保っても期待値がマイナスだった実績がある",
+    "最大ドローダウン-25〜-29%は現実に起こり得る（買い専用・少数集中のため急落時は指数並みに沈む）",
+    "災害ストップ-15%は個別銘柄急落時に確実に発動する前提で、失っても生活に影響しない資金で運用すること",
+    "バックテストはyfinance調整済み日足。最終検証は1531銘柄ユニバース（不正データ3銘柄除外後1528銘柄）だが、生存者バイアスを完全には除去できていない",
+    "指値買いのため約定しない日がある（検証上シグナルの約2割が失効）。追いかけて成行で買うと検証と別物になる",
+    "+2%利確は大勝ちを放棄する設計。執行の質（指値・利確の規律）が成績を左右する"
+   ],
+   "buy_candidates": [
+    {
+     "code": "2503",
+     "name": "キリンHD",
+     "close": 2775.0,
+     "rank_value": 0.09,
+     "rank_label": "RSI(2)=0.1",
+     "unit_cost": 277500,
+     "limit_price": 2747.2,
+     "priority": 1
+    },
+    {
+     "code": "4578",
+     "name": "大塚HD",
+     "close": 11335.0,
+     "rank_value": 3.39,
+     "rank_label": "RSI(2)=3.4",
+     "unit_cost": 1133500,
+     "limit_price": 11221.6,
+     "priority": 2
+    },
+    {
+     "code": "6301",
+     "name": "コマツ",
+     "close": 7114.0,
+     "rank_value": 4.35,
+     "rank_label": "RSI(2)=4.4",
+     "unit_cost": 711400,
+     "limit_price": 7042.9,
+     "priority": 3
+    },
+    {
+     "code": "7735",
+     "name": "SCREEN",
+     "close": 12255.0,
+     "rank_value": 4.64,
+     "rank_label": "RSI(2)=4.6",
+     "unit_cost": 1225500,
+     "limit_price": 12132.5,
+     "priority": 4
+    },
+    {
+     "code": "2801",
+     "name": "キッコーマン",
+     "close": 1671.0,
+     "rank_value": 4.71,
+     "rank_label": "RSI(2)=4.7",
+     "unit_cost": 167100,
+     "limit_price": 1654.3,
+     "priority": 5
+    },
+    {
+     "code": "2269",
+     "name": "明治HD",
+     "close": 4257.0,
+     "rank_value": 5.35,
+     "rank_label": "RSI(2)=5.4",
+     "unit_cost": 425700,
+     "limit_price": 4214.4,
+     "priority": 6
+    },
+    {
+     "code": "2802",
+     "name": "味の素",
+     "close": 4974.0,
+     "rank_value": 6.04,
+     "rank_label": "RSI(2)=6.0",
+     "unit_cost": 497400,
+     "limit_price": 4924.3,
+     "priority": 7
+    },
+    {
+     "code": "8035",
+     "name": "東京エレクトロン",
+     "close": 51460.0,
+     "rank_value": 7.1,
+     "rank_label": "RSI(2)=7.1",
+     "unit_cost": 5146000,
+     "limit_price": 50945.4,
+     "priority": 8
+    },
+    {
+     "code": "6963",
+     "name": "ローム",
+     "close": 4577.0,
+     "rank_value": 9.13,
+     "rank_label": "RSI(2)=9.1",
+     "unit_cost": 457700,
+     "limit_price": 4531.2,
+     "priority": 9
+    },
+    {
+     "code": "9201",
+     "name": "JAL",
+     "close": 2964.0,
+     "rank_value": 9.26,
+     "rank_label": "RSI(2)=9.3",
+     "unit_cost": 296400,
+     "limit_price": 2934.4,
+     "priority": 10
+    }
+   ],
+   "universe_status": [
+    {
+     "code": "1605",
+     "name": "INPEX",
+     "close": 3930.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=76.9",
+     "trend_ok": true
+    },
+    {
+     "code": "1801",
+     "name": "大成建設",
+     "close": 12470.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=16.8",
+     "trend_ok": false
+    },
+    {
+     "code": "1802",
+     "name": "大林組",
+     "close": 3012.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=26.2",
+     "trend_ok": false
+    },
+    {
+     "code": "1803",
+     "name": "清水建設",
+     "close": 2360.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=20.9",
+     "trend_ok": false
+    },
+    {
+     "code": "1925",
+     "name": "大和ハウス",
+     "close": 4598.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=11.0",
+     "trend_ok": false
+    },
+    {
+     "code": "1928",
+     "name": "積水ハウス",
+     "close": 3361.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=60.9",
+     "trend_ok": false
+    },
+    {
+     "code": "2269",
+     "name": "明治HD",
+     "close": 4257.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=5.4",
+     "trend_ok": true
+    },
+    {
+     "code": "2413",
+     "name": "エムスリー",
+     "close": 1690.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=40.2",
+     "trend_ok": false
+    },
+    {
+     "code": "2502",
+     "name": "アサヒGHD",
+     "close": 1586.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=3.2",
+     "trend_ok": false
+    },
+    {
+     "code": "2503",
+     "name": "キリンHD",
+     "close": 2775.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=0.1",
+     "trend_ok": true
+    },
+    {
+     "code": "2801",
+     "name": "キッコーマン",
+     "close": 1671.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=4.7",
+     "trend_ok": true
+    },
+    {
+     "code": "2802",
+     "name": "味の素",
+     "close": 4974.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=6.0",
+     "trend_ok": true
+    },
+    {
+     "code": "2914",
+     "name": "JT",
+     "close": 6693.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=71.8",
+     "trend_ok": true
+    },
+    {
+     "code": "3092",
+     "name": "ZOZO",
+     "close": 1114.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=50.1",
+     "trend_ok": false
+    },
+    {
+     "code": "3382",
+     "name": "セブン&アイ",
+     "close": 2008.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=11.1",
+     "trend_ok": false
+    },
+    {
+     "code": "3402",
+     "name": "東レ",
+     "close": 1237.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=67.8",
+     "trend_ok": true
+    },
+    {
+     "code": "3407",
+     "name": "旭化成",
+     "close": 1552.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=1.5",
+     "trend_ok": false
+    },
+    {
+     "code": "4005",
+     "name": "住友化学",
+     "close": 558.5,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=10.0",
+     "trend_ok": true
+    },
+    {
+     "code": "4063",
+     "name": "信越化学",
+     "close": 5738.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=39.9",
+     "trend_ok": false
+    },
+    {
+     "code": "4183",
+     "name": "三井化学",
+     "close": 2097.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=10.3",
+     "trend_ok": true
+    },
+    {
+     "code": "4188",
+     "name": "三菱ケミカルG",
+     "close": 1156.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=19.6",
+     "trend_ok": true
+    },
+    {
+     "code": "4307",
+     "name": "野村総研",
+     "close": 4901.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=43.5",
+     "trend_ok": false
+    },
+    {
+     "code": "4324",
+     "name": "電通G",
+     "close": 3577.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=42.2",
+     "trend_ok": true
+    },
+    {
+     "code": "4452",
+     "name": "花王",
+     "close": 3387.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=16.5",
+     "trend_ok": true
+    },
+    {
+     "code": "4502",
+     "name": "武田薬品",
+     "close": 5666.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=43.3",
+     "trend_ok": true
+    },
+    {
+     "code": "4503",
+     "name": "アステラス製薬",
+     "close": 2240.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=36.9",
+     "trend_ok": false
+    },
+    {
+     "code": "4507",
+     "name": "塩野義製薬",
+     "close": 2827.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=7.6",
+     "trend_ok": false
+    },
+    {
+     "code": "4519",
+     "name": "中外製薬",
+     "close": 6422.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=7.0",
+     "trend_ok": false
+    },
+    {
+     "code": "4523",
+     "name": "エーザイ",
+     "close": 4658.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=51.7",
+     "trend_ok": true
+    },
+    {
+     "code": "4543",
+     "name": "テルモ",
+     "close": 2246.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=20.7",
+     "trend_ok": true
+    },
+    {
+     "code": "4568",
+     "name": "第一三共",
+     "close": 2772.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=79.3",
+     "trend_ok": false
+    },
+    {
+     "code": "4578",
+     "name": "大塚HD",
+     "close": 11335.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=3.4",
+     "trend_ok": true
+    },
+    {
+     "code": "4661",
+     "name": "OLC",
+     "close": 3085.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=22.5",
+     "trend_ok": true
+    },
+    {
+     "code": "4704",
+     "name": "トレンドマイクロ",
+     "close": 5813.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=70.2",
+     "trend_ok": false
+    },
+    {
+     "code": "4755",
+     "name": "楽天G",
+     "close": 716.3,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=20.6",
+     "trend_ok": false
+    },
+    {
+     "code": "4901",
+     "name": "富士フイルム",
+     "close": 3225.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=48.6",
+     "trend_ok": false
+    },
+    {
+     "code": "4911",
+     "name": "資生堂",
+     "close": 3404.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=78.3",
+     "trend_ok": true
+    },
+    {
+     "code": "5019",
+     "name": "出光興産",
+     "close": 1648.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=82.3",
+     "trend_ok": true
+    },
+    {
+     "code": "5020",
+     "name": "ENEOS",
+     "close": 1441.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=46.6",
+     "trend_ok": true
+    },
+    {
+     "code": "5108",
+     "name": "ブリヂストン",
+     "close": 3777.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=22.7",
+     "trend_ok": true
+    },
+    {
+     "code": "5201",
+     "name": "AGC",
+     "close": 5537.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=43.4",
+     "trend_ok": false
+    },
+    {
+     "code": "5401",
+     "name": "日本製鉄",
+     "close": 686.4,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=51.3",
+     "trend_ok": true
+    },
+    {
+     "code": "5411",
+     "name": "JFE",
+     "close": 1820.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=21.8",
+     "trend_ok": false
+    },
+    {
+     "code": "5713",
+     "name": "住友金属鉱山",
+     "close": 9484.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=15.5",
+     "trend_ok": true
+    },
+    {
+     "code": "5802",
+     "name": "住友電工",
+     "close": 2077.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=27.8",
+     "trend_ok": false
+    },
+    {
+     "code": "6098",
+     "name": "リクルートHD",
+     "close": 15500.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=34.4",
+     "trend_ok": true
+    },
+    {
+     "code": "6146",
+     "name": "ディスコ",
+     "close": 51980.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=7.9",
+     "trend_ok": false
+    },
+    {
+     "code": "6273",
+     "name": "SMC",
+     "close": 68160.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=69.4",
+     "trend_ok": true
+    },
+    {
+     "code": "6301",
+     "name": "コマツ",
+     "close": 7114.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=4.4",
+     "trend_ok": true
+    },
+    {
+     "code": "6326",
+     "name": "クボタ",
+     "close": 2783.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=19.8",
+     "trend_ok": true
+    },
+    {
+     "code": "6367",
+     "name": "ダイキン工業",
+     "close": 20780.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=51.2",
+     "trend_ok": false
+    },
+    {
+     "code": "6501",
+     "name": "日立製作所",
+     "close": 5199.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=45.3",
+     "trend_ok": true
+    },
+    {
+     "code": "6503",
+     "name": "三菱電機",
+     "close": 5027.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=18.9",
+     "trend_ok": false
+    },
+    {
+     "code": "6506",
+     "name": "安川電機",
+     "close": 4301.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=9.3",
+     "trend_ok": false
+    },
+    {
+     "code": "6594",
+     "name": "ニデック",
+     "close": 2691.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=49.7",
+     "trend_ok": true
+    },
+    {
+     "code": "6645",
+     "name": "オムロン",
+     "close": 6003.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=21.3",
+     "trend_ok": true
+    },
+    {
+     "code": "6701",
+     "name": "NEC",
+     "close": 4536.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=33.7",
+     "trend_ok": false
+    },
+    {
+     "code": "6702",
+     "name": "富士通",
+     "close": 3749.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=29.9",
+     "trend_ok": true
+    },
+    {
+     "code": "6723",
+     "name": "ルネサス",
+     "close": 3192.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=15.0",
+     "trend_ok": true
+    },
+    {
+     "code": "6752",
+     "name": "パナソニックHD",
+     "close": 4200.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=37.4",
+     "trend_ok": true
+    },
+    {
+     "code": "6758",
+     "name": "ソニーG",
+     "close": 3632.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=16.7",
+     "trend_ok": true
+    },
+    {
+     "code": "6762",
+     "name": "TDK",
+     "close": 2808.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=33.5",
+     "trend_ok": true
+    },
+    {
+     "code": "6857",
+     "name": "アドバンテスト",
+     "close": 31720.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=20.5",
+     "trend_ok": true
+    },
+    {
+     "code": "6861",
+     "name": "キーエンス",
+     "close": 76000.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=16.6",
+     "trend_ok": true
+    },
+    {
+     "code": "6902",
+     "name": "デンソー",
+     "close": 1921.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=81.7",
+     "trend_ok": false
+    },
+    {
+     "code": "6920",
+     "name": "レーザーテック",
+     "close": 34570.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=29.6",
+     "trend_ok": false
+    },
+    {
+     "code": "6954",
+     "name": "ファナック",
+     "close": 5735.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=17.1",
+     "trend_ok": false
+    },
+    {
+     "code": "6963",
+     "name": "ローム",
+     "close": 4577.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=9.1",
+     "trend_ok": true
+    },
+    {
+     "code": "6971",
+     "name": "京セラ",
+     "close": 3551.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=85.7",
+     "trend_ok": true
+    },
+    {
+     "code": "6981",
+     "name": "村田製作所",
+     "close": 7352.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=51.0",
+     "trend_ok": true
+    },
+    {
+     "code": "7011",
+     "name": "三菱重工",
+     "close": 3705.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=28.4",
+     "trend_ok": false
+    },
+    {
+     "code": "7012",
+     "name": "川崎重工",
+     "close": 2319.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=13.1",
+     "trend_ok": false
+    },
+    {
+     "code": "7013",
+     "name": "IHI",
+     "close": 2665.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=37.5",
+     "trend_ok": false
+    },
+    {
+     "code": "7201",
+     "name": "日産自動車",
+     "close": 311.7,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=72.6",
+     "trend_ok": false
+    },
+    {
+     "code": "7203",
+     "name": "トヨタ自動車",
+     "close": 3031.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=73.5",
+     "trend_ok": false
+    },
+    {
+     "code": "7267",
+     "name": "ホンダ",
+     "close": 1664.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=77.3",
+     "trend_ok": true
+    },
+    {
+     "code": "7269",
+     "name": "スズキ",
+     "close": 2047.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=79.5",
+     "trend_ok": false
+    },
+    {
+     "code": "7270",
+     "name": "SUBARU",
+     "close": 2619.5,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=82.6",
+     "trend_ok": false
+    },
+    {
+     "code": "7733",
+     "name": "オリンパス",
+     "close": 1970.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=68.1",
+     "trend_ok": true
+    },
+    {
+     "code": "7735",
+     "name": "SCREEN",
+     "close": 12255.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=4.6",
+     "trend_ok": true
+    },
+    {
+     "code": "7741",
+     "name": "HOYA",
+     "close": 22690.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=0.4",
+     "trend_ok": false
+    },
+    {
+     "code": "7751",
+     "name": "キヤノン",
+     "close": 4380.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=58.1",
+     "trend_ok": false
+    },
+    {
+     "code": "7832",
+     "name": "バンダイナムコHD",
+     "close": 5359.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=59.5",
+     "trend_ok": true
+    },
+    {
+     "code": "7974",
+     "name": "任天堂",
+     "close": 8093.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=25.9",
+     "trend_ok": false
+    },
+    {
+     "code": "8001",
+     "name": "伊藤忠商事",
+     "close": 2294.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=73.5",
+     "trend_ok": true
+    },
+    {
+     "code": "8002",
+     "name": "丸紅",
+     "close": 5049.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=41.4",
+     "trend_ok": false
+    },
+    {
+     "code": "8015",
+     "name": "豊田通商",
+     "close": 7553.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=66.0",
+     "trend_ok": true
+    },
+    {
+     "code": "8031",
+     "name": "三井物産",
+     "close": 5060.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=24.5",
+     "trend_ok": false
+    },
+    {
+     "code": "8035",
+     "name": "東京エレクトロン",
+     "close": 51460.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=7.1",
+     "trend_ok": true
+    },
+    {
+     "code": "8053",
+     "name": "住友商事",
+     "close": 1822.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=43.3",
+     "trend_ok": true
+    },
+    {
+     "code": "8058",
+     "name": "三菱商事",
+     "close": 5005.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=58.5",
+     "trend_ok": true
+    },
+    {
+     "code": "8113",
+     "name": "ユニ・チャーム",
+     "close": 951.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=53.1",
+     "trend_ok": true
+    },
+    {
+     "code": "8267",
+     "name": "イオン",
+     "close": 1332.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=9.2",
+     "trend_ok": false
+    },
+    {
+     "code": "8306",
+     "name": "三菱UFJ",
+     "close": 3661.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=55.4",
+     "trend_ok": true
+    },
+    {
+     "code": "8308",
+     "name": "りそなHD",
+     "close": 2522.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=73.0",
+     "trend_ok": true
+    },
+    {
+     "code": "8316",
+     "name": "三井住友FG",
+     "close": 6911.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=58.1",
+     "trend_ok": true
+    },
+    {
+     "code": "8411",
+     "name": "みずほFG",
+     "close": 8654.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=70.4",
+     "trend_ok": true
+    },
+    {
+     "code": "8591",
+     "name": "オリックス",
+     "close": 6089.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=55.5",
+     "trend_ok": true
+    },
+    {
+     "code": "8604",
+     "name": "野村HD",
+     "close": 1664.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=69.6",
+     "trend_ok": true
+    },
+    {
+     "code": "8630",
+     "name": "SOMPO",
+     "close": 6774.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=80.1",
+     "trend_ok": true
+    },
+    {
+     "code": "8697",
+     "name": "JPX",
+     "close": 2210.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=42.9",
+     "trend_ok": true
+    },
+    {
+     "code": "8725",
+     "name": "MS&AD",
+     "close": 5091.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=74.3",
+     "trend_ok": true
+    },
+    {
+     "code": "8750",
+     "name": "第一生命HD",
+     "close": 1883.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=85.3",
+     "trend_ok": true
+    },
+    {
+     "code": "8766",
+     "name": "東京海上HD",
+     "close": 7970.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=81.2",
+     "trend_ok": true
+    },
+    {
+     "code": "8801",
+     "name": "三井不動産",
+     "close": 1491.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=41.4",
+     "trend_ok": false
+    },
+    {
+     "code": "8802",
+     "name": "三菱地所",
+     "close": 3602.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=8.2",
+     "trend_ok": false
+    },
+    {
+     "code": "8830",
+     "name": "住友不動産",
+     "close": 3211.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=25.2",
+     "trend_ok": false
+    },
+    {
+     "code": "9020",
+     "name": "JR東日本",
+     "close": 3493.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=18.4",
+     "trend_ok": false
+    },
+    {
+     "code": "9021",
+     "name": "JR西日本",
+     "close": 2998.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=34.6",
+     "trend_ok": true
+    },
+    {
+     "code": "9022",
+     "name": "JR東海",
+     "close": 3797.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=16.6",
+     "trend_ok": false
+    },
+    {
+     "code": "9101",
+     "name": "日本郵船",
+     "close": 7262.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=65.4",
+     "trend_ok": true
+    },
+    {
+     "code": "9104",
+     "name": "商船三井",
+     "close": 7046.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=56.7",
+     "trend_ok": true
+    },
+    {
+     "code": "9107",
+     "name": "川崎汽船",
+     "close": 3397.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=69.0",
+     "trend_ok": true
+    },
+    {
+     "code": "9201",
+     "name": "JAL",
+     "close": 2964.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "RSI(2)=9.3",
+     "trend_ok": true
+    },
+    {
+     "code": "9202",
+     "name": "ANAHD",
+     "close": 2935.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=17.4",
+     "trend_ok": false
+    },
+    {
+     "code": "9432",
+     "name": "NTT",
+     "close": 175.7,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=89.5",
+     "trend_ok": true
+    },
+    {
+     "code": "9433",
+     "name": "KDDI",
+     "close": 3031.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=89.5",
+     "trend_ok": true
+    },
+    {
+     "code": "9434",
+     "name": "ソフトバンク",
+     "close": 246.9,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=91.7",
+     "trend_ok": true
+    },
+    {
+     "code": "9501",
+     "name": "東京電力HD",
+     "close": 540.9,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=20.3",
+     "trend_ok": false
+    },
+    {
+     "code": "9503",
+     "name": "関西電力",
+     "close": 2964.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=49.3",
+     "trend_ok": true
+    },
+    {
+     "code": "9531",
+     "name": "東京ガス",
+     "close": 6275.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=83.5",
+     "trend_ok": false
+    },
+    {
+     "code": "9684",
+     "name": "スクエニHD",
+     "close": 2881.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=73.8",
+     "trend_ok": true
+    },
+    {
+     "code": "9697",
+     "name": "カプコン",
+     "close": 4240.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=46.6",
+     "trend_ok": true
+    },
+    {
+     "code": "9735",
+     "name": "セコム",
+     "close": 6336.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "RSI(2)=73.1",
+     "trend_ok": true
+    },
+    {
+     "code": "9766",
+     "name": "コナミG",
+     "close": 20730.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=57.8",
+     "trend_ok": true
+    },
+    {
+     "code": "9843",
+     "name": "ニトリHD",
+     "close": 3242.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=28.7",
+     "trend_ok": true
+    },
+    {
+     "code": "9983",
+     "name": "ファーストリテイリング",
+     "close": 66480.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=4.2",
+     "trend_ok": false
+    },
+    {
+     "code": "9984",
+     "name": "ソフトバンクG",
+     "close": 6540.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "RSI(2)=37.7",
+     "trend_ok": true
+    }
+   ]
+  },
+  {
+   "id": "keltner_atr_dip",
+   "display_name": "ATRチャネル押し目買い（+2%利確）",
+   "description": "長期上昇トレンド中にSMA(20)−2.5×ATR(20)を下回った深押しを翌寄り成行で買い、+2%で利確",
+   "oos_stats": {
+    "win_rate": 0.665,
+    "profit_factor": 1.22,
+    "max_dd": -0.339,
+    "period": "2022-01〜2026-07",
+    "trades": 672
+   },
+   "validated_at": "2026-07-17",
+   "rule_note": "翌営業日の寄付で成行買い / 終値が建値+2%以上→翌寄りで利確売り / 未達なら終値≥SMA(20)で翌寄り売り / 災害ストップ-15% / 最大10営業日 / シグナル頻度低め・サブ戦略（5枠中1〜2枠目安）",
+   "limit_entry": null,
+   "risks": [
+    "検証OOS期間(2022〜2026)は日本株の強い上昇相場で、成績に追い風が含まれる。2018年型のじり安相場では勝率を保っても期待値がマイナスだった実績がある",
+    "最大ドローダウン-25〜-29%は現実に起こり得る（買い専用・少数集中のため急落時は指数並みに沈む）",
+    "災害ストップ-15%は個別銘柄急落時に確実に発動する前提で、失っても生活に影響しない資金で運用すること",
+    "バックテストはyfinance調整済み日足。最終検証は1531銘柄ユニバース（不正データ3銘柄除外後1528銘柄）だが、生存者バイアスを完全には除去できていない",
+    "シグナル頻度が低く（年80回弱）、単独運用では資金が遊びポートフォリオ効率が落ちる。サブ戦略として1〜2枠での運用を推奨",
+    "利確判定は終値ベース→翌寄り売りが検証済みルール。ザラ場指値での利確は未検証"
+   ],
+   "buy_candidates": [
+    {
+     "code": "4543",
+     "name": "テルモ",
+     "close": 2246.0,
+     "rank_value": 0.03,
+     "rank_label": "乖離率=0.025",
+     "unit_cost": 224600,
+     "priority": 1
+    },
+    {
+     "code": "2503",
+     "name": "キリンHD",
+     "close": 2775.0,
+     "rank_value": 0.01,
+     "rank_label": "乖離率=0.014",
+     "unit_cost": 277500,
+     "priority": 2
+    },
+    {
+     "code": "5108",
+     "name": "ブリヂストン",
+     "close": 3777.0,
+     "rank_value": 0.01,
+     "rank_label": "乖離率=0.010",
+     "unit_cost": 377700,
+     "priority": 3
+    },
+    {
+     "code": "2801",
+     "name": "キッコーマン",
+     "close": 1671.0,
+     "rank_value": 0.0,
+     "rank_label": "乖離率=0.001",
+     "unit_cost": 167100,
+     "priority": 4
+    }
+   ],
+   "universe_status": [
+    {
+     "code": "1605",
+     "name": "INPEX",
+     "close": 3930.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.082",
+     "trend_ok": true
+    },
+    {
+     "code": "1801",
+     "name": "大成建設",
+     "close": 12470.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.071",
+     "trend_ok": false
+    },
+    {
+     "code": "1802",
+     "name": "大林組",
+     "close": 3012.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.066",
+     "trend_ok": false
+    },
+    {
+     "code": "1803",
+     "name": "清水建設",
+     "close": 2360.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.070",
+     "trend_ok": false
+    },
+    {
+     "code": "1925",
+     "name": "大和ハウス",
+     "close": 4598.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.024",
+     "trend_ok": false
+    },
+    {
+     "code": "1928",
+     "name": "積水ハウス",
+     "close": 3361.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.026",
+     "trend_ok": false
+    },
+    {
+     "code": "2269",
+     "name": "明治HD",
+     "close": 4257.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.025",
+     "trend_ok": true
+    },
+    {
+     "code": "2413",
+     "name": "エムスリー",
+     "close": 1690.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.072",
+     "trend_ok": false
+    },
+    {
+     "code": "2502",
+     "name": "アサヒGHD",
+     "close": 1586.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.008",
+     "trend_ok": false
+    },
+    {
+     "code": "2503",
+     "name": "キリンHD",
+     "close": 2775.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "乖離率=0.014",
+     "trend_ok": true
+    },
+    {
+     "code": "2801",
+     "name": "キッコーマン",
+     "close": 1671.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "乖離率=0.001",
+     "trend_ok": true
+    },
+    {
+     "code": "2802",
+     "name": "味の素",
+     "close": 4974.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.022",
+     "trend_ok": true
+    },
+    {
+     "code": "2914",
+     "name": "JT",
+     "close": 6693.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.019",
+     "trend_ok": true
+    },
+    {
+     "code": "3092",
+     "name": "ZOZO",
+     "close": 1114.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.042",
+     "trend_ok": false
+    },
+    {
+     "code": "3382",
+     "name": "セブン&アイ",
+     "close": 2008.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.047",
+     "trend_ok": false
+    },
+    {
+     "code": "3402",
+     "name": "東レ",
+     "close": 1237.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.037",
+     "trend_ok": true
+    },
+    {
+     "code": "3407",
+     "name": "旭化成",
+     "close": 1552.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.019",
+     "trend_ok": false
+    },
+    {
+     "code": "4005",
+     "name": "住友化学",
+     "close": 558.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.077",
+     "trend_ok": true
+    },
+    {
+     "code": "4063",
+     "name": "信越化学",
+     "close": 5738.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.029",
+     "trend_ok": false
+    },
+    {
+     "code": "4183",
+     "name": "三井化学",
+     "close": 2097.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.045",
+     "trend_ok": true
+    },
+    {
+     "code": "4188",
+     "name": "三菱ケミカルG",
+     "close": 1156.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.062",
+     "trend_ok": true
+    },
+    {
+     "code": "4307",
+     "name": "野村総研",
+     "close": 4901.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.059",
+     "trend_ok": false
+    },
+    {
+     "code": "4324",
+     "name": "電通G",
+     "close": 3577.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.069",
+     "trend_ok": true
+    },
+    {
+     "code": "4452",
+     "name": "花王",
+     "close": 3387.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.011",
+     "trend_ok": true
+    },
+    {
+     "code": "4502",
+     "name": "武田薬品",
+     "close": 5666.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.034",
+     "trend_ok": true
+    },
+    {
+     "code": "4503",
+     "name": "アステラス製薬",
+     "close": 2240.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.011",
+     "trend_ok": false
+    },
+    {
+     "code": "4507",
+     "name": "塩野義製薬",
+     "close": 2827.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.031",
+     "trend_ok": false
+    },
+    {
+     "code": "4519",
+     "name": "中外製薬",
+     "close": 6422.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.001",
+     "trend_ok": false
+    },
+    {
+     "code": "4523",
+     "name": "エーザイ",
+     "close": 4658.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.034",
+     "trend_ok": true
+    },
+    {
+     "code": "4543",
+     "name": "テルモ",
+     "close": 2246.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "乖離率=0.025",
+     "trend_ok": true
+    },
+    {
+     "code": "4568",
+     "name": "第一三共",
+     "close": 2772.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.057",
+     "trend_ok": false
+    },
+    {
+     "code": "4578",
+     "name": "大塚HD",
+     "close": 11335.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.007",
+     "trend_ok": true
+    },
+    {
+     "code": "4661",
+     "name": "OLC",
+     "close": 3085.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.083",
+     "trend_ok": true
+    },
+    {
+     "code": "4704",
+     "name": "トレンドマイクロ",
+     "close": 5813.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.114",
+     "trend_ok": false
+    },
+    {
+     "code": "4755",
+     "name": "楽天G",
+     "close": 716.3,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.023",
+     "trend_ok": false
+    },
+    {
+     "code": "4901",
+     "name": "富士フイルム",
+     "close": 3225.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.054",
+     "trend_ok": false
+    },
+    {
+     "code": "4911",
+     "name": "資生堂",
+     "close": 3404.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.048",
+     "trend_ok": true
+    },
+    {
+     "code": "5019",
+     "name": "出光興産",
+     "close": 1648.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.188",
+     "trend_ok": true
+    },
+    {
+     "code": "5020",
+     "name": "ENEOS",
+     "close": 1441.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.127",
+     "trend_ok": true
+    },
+    {
+     "code": "5108",
+     "name": "ブリヂストン",
+     "close": 3777.0,
+     "entry": true,
+     "exit": false,
+     "rank_label": "乖離率=0.010",
+     "trend_ok": true
+    },
+    {
+     "code": "5201",
+     "name": "AGC",
+     "close": 5537.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.043",
+     "trend_ok": false
+    },
+    {
+     "code": "5401",
+     "name": "日本製鉄",
+     "close": 686.4,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.070",
+     "trend_ok": true
+    },
+    {
+     "code": "5411",
+     "name": "JFE",
+     "close": 1820.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.051",
+     "trend_ok": false
+    },
+    {
+     "code": "5713",
+     "name": "住友金属鉱山",
+     "close": 9484.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.041",
+     "trend_ok": true
+    },
+    {
+     "code": "5802",
+     "name": "住友電工",
+     "close": 2077.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.094",
+     "trend_ok": false
+    },
+    {
+     "code": "6098",
+     "name": "リクルートHD",
+     "close": 15500.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.036",
+     "trend_ok": true
+    },
+    {
+     "code": "6146",
+     "name": "ディスコ",
+     "close": 51980.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.042",
+     "trend_ok": false
+    },
+    {
+     "code": "6273",
+     "name": "SMC",
+     "close": 68160.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.076",
+     "trend_ok": true
+    },
+    {
+     "code": "6301",
+     "name": "コマツ",
+     "close": 7114.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.041",
+     "trend_ok": true
+    },
+    {
+     "code": "6326",
+     "name": "クボタ",
+     "close": 2783.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.076",
+     "trend_ok": true
+    },
+    {
+     "code": "6367",
+     "name": "ダイキン工業",
+     "close": 20780.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.051",
+     "trend_ok": false
+    },
+    {
+     "code": "6501",
+     "name": "日立製作所",
+     "close": 5199.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.044",
+     "trend_ok": true
+    },
+    {
+     "code": "6503",
+     "name": "三菱電機",
+     "close": 5027.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.005",
+     "trend_ok": false
+    },
+    {
+     "code": "6506",
+     "name": "安川電機",
+     "close": 4301.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.023",
+     "trend_ok": false
+    },
+    {
+     "code": "6594",
+     "name": "ニデック",
+     "close": 2691.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.120",
+     "trend_ok": true
+    },
+    {
+     "code": "6645",
+     "name": "オムロン",
+     "close": 6003.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.044",
+     "trend_ok": true
+    },
+    {
+     "code": "6701",
+     "name": "NEC",
+     "close": 4536.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.052",
+     "trend_ok": false
+    },
+    {
+     "code": "6702",
+     "name": "富士通",
+     "close": 3749.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.074",
+     "trend_ok": true
+    },
+    {
+     "code": "6723",
+     "name": "ルネサス",
+     "close": 3192.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.095",
+     "trend_ok": true
+    },
+    {
+     "code": "6752",
+     "name": "パナソニックHD",
+     "close": 4200.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.077",
+     "trend_ok": true
+    },
+    {
+     "code": "6758",
+     "name": "ソニーG",
+     "close": 3632.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.021",
+     "trend_ok": true
+    },
+    {
+     "code": "6762",
+     "name": "TDK",
+     "close": 2808.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.055",
+     "trend_ok": true
+    },
+    {
+     "code": "6857",
+     "name": "アドバンテスト",
+     "close": 31720.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.073",
+     "trend_ok": true
+    },
+    {
+     "code": "6861",
+     "name": "キーエンス",
+     "close": 76000.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.023",
+     "trend_ok": true
+    },
+    {
+     "code": "6902",
+     "name": "デンソー",
+     "close": 1921.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.053",
+     "trend_ok": false
+    },
+    {
+     "code": "6920",
+     "name": "レーザーテック",
+     "close": 34570.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.168",
+     "trend_ok": false
+    },
+    {
+     "code": "6954",
+     "name": "ファナック",
+     "close": 5735.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.058",
+     "trend_ok": false
+    },
+    {
+     "code": "6963",
+     "name": "ローム",
+     "close": 4577.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.095",
+     "trend_ok": true
+    },
+    {
+     "code": "6971",
+     "name": "京セラ",
+     "close": 3551.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.070",
+     "trend_ok": true
+    },
+    {
+     "code": "6981",
+     "name": "村田製作所",
+     "close": 7352.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.193",
+     "trend_ok": true
+    },
+    {
+     "code": "7011",
+     "name": "三菱重工",
+     "close": 3705.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.034",
+     "trend_ok": false
+    },
+    {
+     "code": "7012",
+     "name": "川崎重工",
+     "close": 2319.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.010",
+     "trend_ok": false
+    },
+    {
+     "code": "7013",
+     "name": "IHI",
+     "close": 2665.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.096",
+     "trend_ok": false
+    },
+    {
+     "code": "7201",
+     "name": "日産自動車",
+     "close": 311.7,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.057",
+     "trend_ok": false
+    },
+    {
+     "code": "7203",
+     "name": "トヨタ自動車",
+     "close": 3031.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.049",
+     "trend_ok": false
+    },
+    {
+     "code": "7267",
+     "name": "ホンダ",
+     "close": 1664.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.055",
+     "trend_ok": true
+    },
+    {
+     "code": "7269",
+     "name": "スズキ",
+     "close": 2047.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.053",
+     "trend_ok": false
+    },
+    {
+     "code": "7270",
+     "name": "SUBARU",
+     "close": 2619.5,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.066",
+     "trend_ok": false
+    },
+    {
+     "code": "7733",
+     "name": "オリンパス",
+     "close": 1970.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.016",
+     "trend_ok": true
+    },
+    {
+     "code": "7735",
+     "name": "SCREEN",
+     "close": 12255.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.066",
+     "trend_ok": true
+    },
+    {
+     "code": "7741",
+     "name": "HOYA",
+     "close": 22690.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=0.010",
+     "trend_ok": false
+    },
+    {
+     "code": "7751",
+     "name": "キヤノン",
+     "close": 4380.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.008",
+     "trend_ok": false
+    },
+    {
+     "code": "7832",
+     "name": "バンダイナムコHD",
+     "close": 5359.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.051",
+     "trend_ok": true
+    },
+    {
+     "code": "7974",
+     "name": "任天堂",
+     "close": 8093.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.010",
+     "trend_ok": false
+    },
+    {
+     "code": "8001",
+     "name": "伊藤忠商事",
+     "close": 2294.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.122",
+     "trend_ok": true
+    },
+    {
+     "code": "8002",
+     "name": "丸紅",
+     "close": 5049.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.083",
+     "trend_ok": false
+    },
+    {
+     "code": "8015",
+     "name": "豊田通商",
+     "close": 7553.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.092",
+     "trend_ok": true
+    },
+    {
+     "code": "8031",
+     "name": "三井物産",
+     "close": 5060.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.076",
+     "trend_ok": false
+    },
+    {
+     "code": "8035",
+     "name": "東京エレクトロン",
+     "close": 51460.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.076",
+     "trend_ok": true
+    },
+    {
+     "code": "8053",
+     "name": "住友商事",
+     "close": 1822.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.093",
+     "trend_ok": true
+    },
+    {
+     "code": "8058",
+     "name": "三菱商事",
+     "close": 5005.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.098",
+     "trend_ok": true
+    },
+    {
+     "code": "8113",
+     "name": "ユニ・チャーム",
+     "close": 951.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.027",
+     "trend_ok": true
+    },
+    {
+     "code": "8267",
+     "name": "イオン",
+     "close": 1332.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.040",
+     "trend_ok": false
+    },
+    {
+     "code": "8306",
+     "name": "三菱UFJ",
+     "close": 3661.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.073",
+     "trend_ok": true
+    },
+    {
+     "code": "8308",
+     "name": "りそなHD",
+     "close": 2522.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.095",
+     "trend_ok": true
+    },
+    {
+     "code": "8316",
+     "name": "三井住友FG",
+     "close": 6911.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.073",
+     "trend_ok": true
+    },
+    {
+     "code": "8411",
+     "name": "みずほFG",
+     "close": 8654.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.092",
+     "trend_ok": true
+    },
+    {
+     "code": "8591",
+     "name": "オリックス",
+     "close": 6089.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.043",
+     "trend_ok": true
+    },
+    {
+     "code": "8604",
+     "name": "野村HD",
+     "close": 1664.5,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.097",
+     "trend_ok": true
+    },
+    {
+     "code": "8630",
+     "name": "SOMPO",
+     "close": 6774.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.056",
+     "trend_ok": true
+    },
+    {
+     "code": "8697",
+     "name": "JPX",
+     "close": 2210.5,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.057",
+     "trend_ok": true
+    },
+    {
+     "code": "8725",
+     "name": "MS&AD",
+     "close": 5091.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.067",
+     "trend_ok": true
+    },
+    {
+     "code": "8750",
+     "name": "第一生命HD",
+     "close": 1883.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.088",
+     "trend_ok": true
+    },
+    {
+     "code": "8766",
+     "name": "東京海上HD",
+     "close": 7970.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.100",
+     "trend_ok": true
+    },
+    {
+     "code": "8801",
+     "name": "三井不動産",
+     "close": 1491.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.049",
+     "trend_ok": false
+    },
+    {
+     "code": "8802",
+     "name": "三菱地所",
+     "close": 3602.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.036",
+     "trend_ok": false
+    },
+    {
+     "code": "8830",
+     "name": "住友不動産",
+     "close": 3211.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.034",
+     "trend_ok": false
+    },
+    {
+     "code": "9020",
+     "name": "JR東日本",
+     "close": 3493.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.040",
+     "trend_ok": false
+    },
+    {
+     "code": "9021",
+     "name": "JR西日本",
+     "close": 2998.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.053",
+     "trend_ok": true
+    },
+    {
+     "code": "9022",
+     "name": "JR東海",
+     "close": 3797.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.031",
+     "trend_ok": false
+    },
+    {
+     "code": "9101",
+     "name": "日本郵船",
+     "close": 7262.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.096",
+     "trend_ok": true
+    },
+    {
+     "code": "9104",
+     "name": "商船三井",
+     "close": 7046.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.072",
+     "trend_ok": true
+    },
+    {
+     "code": "9107",
+     "name": "川崎汽船",
+     "close": 3397.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.095",
+     "trend_ok": true
+    },
+    {
+     "code": "9201",
+     "name": "JAL",
+     "close": 2964.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.032",
+     "trend_ok": true
+    },
+    {
+     "code": "9202",
+     "name": "ANAHD",
+     "close": 2935.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.014",
+     "trend_ok": false
+    },
+    {
+     "code": "9432",
+     "name": "NTT",
+     "close": 175.7,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.081",
+     "trend_ok": true
+    },
+    {
+     "code": "9433",
+     "name": "KDDI",
+     "close": 3031.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.082",
+     "trend_ok": true
+    },
+    {
+     "code": "9434",
+     "name": "ソフトバンク",
+     "close": 246.9,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.080",
+     "trend_ok": true
+    },
+    {
+     "code": "9501",
+     "name": "東京電力HD",
+     "close": 540.9,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.102",
+     "trend_ok": false
+    },
+    {
+     "code": "9503",
+     "name": "関西電力",
+     "close": 2964.5,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.143",
+     "trend_ok": true
+    },
+    {
+     "code": "9531",
+     "name": "東京ガス",
+     "close": 6275.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.074",
+     "trend_ok": false
+    },
+    {
+     "code": "9684",
+     "name": "スクエニHD",
+     "close": 2881.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.069",
+     "trend_ok": true
+    },
+    {
+     "code": "9697",
+     "name": "カプコン",
+     "close": 4240.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.089",
+     "trend_ok": true
+    },
+    {
+     "code": "9735",
+     "name": "セコム",
+     "close": 6336.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.039",
+     "trend_ok": true
+    },
+    {
+     "code": "9766",
+     "name": "コナミG",
+     "close": 20730.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=-0.040",
+     "trend_ok": true
+    },
+    {
+     "code": "9843",
+     "name": "ニトリHD",
+     "close": 3242.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.125",
+     "trend_ok": true
+    },
+    {
+     "code": "9983",
+     "name": "ファーストリテイリング",
+     "close": 66480.0,
+     "entry": false,
+     "exit": false,
+     "rank_label": "乖離率=0.001",
+     "trend_ok": false
+    },
+    {
+     "code": "9984",
+     "name": "ソフトバンクG",
+     "close": 6540.0,
+     "entry": false,
+     "exit": true,
+     "rank_label": "乖離率=-0.291",
+     "trend_ok": true
+    }
+   ]
+  }
+ ],
+ "calendar": {
+  "future_business_days": [
+   "2026-09-14",
+   "2026-09-15",
+   "2026-09-16",
+   "2026-09-17",
+   "2026-09-18",
+   "2026-09-24",
+   "2026-09-25",
+   "2026-09-28",
+   "2026-09-29",
+   "2026-09-30",
+   "2026-10-01",
+   "2026-10-02",
+   "2026-10-05",
+   "2026-10-06",
+   "2026-10-07"
+  ]
+ },
+ "paper_log_summary": {
+  "closed_trades": 202,
+  "win_rate": 0.495,
+  "avg_ret": -0.22,
+  "by_strategy": {
+   "rsi2_dip": {
+    "closed_trades": 139,
+    "win_rate": 0.5324,
+    "avg_ret": 0.04
+   },
+   "keltner_atr_dip": {
+    "closed_trades": 63,
+    "win_rate": 0.4127,
+    "avg_ret": -0.77
+   }
+  }
+ }
+}
